@@ -1,0 +1,16 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<html>
+    <head>
+        <title>Lista de Produtos</title>
+    </head>
+    <body>
+        <a href="{{url_for('listar_produto')}}">Lista de Produtos</a>
+        <h1>{{ produto.get_nome() }}</h1>
+        <p>Identificador: {{ produto.get_id() }}</p>
+        <p>Preço: R$ {{ produto.get_preco() }}</p>
+        <p>Estoque: {{ produto.get_quantidade() }}</p>
+    </body>
+</html>

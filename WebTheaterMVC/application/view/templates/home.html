@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+
+<div class="card-group">
+    <div class="card">
+        <img src="https://bolavip.com/__export/1650075045963/sites/bolavip/img/2022/04/15/casimiro.webp_242310155.webp"
+            class="card-img-top" alt="...">
+            
+        <a class="btn btn-primary" href="https://www.youtube.com/watch?v=19eC0HtadeM" role="button">Assista</a>
+    </div>
+    <div class="card">
+        <img src="http://images.virgula.com.br/2016/09/duny.jpg" class="card-img-top" alt="...">
+        <a class="btn btn-primary" href="https://www.youtube.com/c/raonyphillips" role="button">Assista</a>
+    </div>
+    <div class="card">
+        <img src="https://portalgiro.com/wp-content/uploads/2021/03/WhatsApp-Image-2021-03-15-at-22.08.54.jpeg"
+            class="card-img-top" alt="...">
+        <a class="btn btn-primary" href="https://www.youtube.com/watch?v=fWY78-MWgaM" role="button">Assista</a>
+    </div>
+</div>
+<h2 class="text-center">Comentarios</h2>
+<div class="d-flex flex-column justify-content-start m-5">
+    <div class="text-center">
+        <a class="btn btn-success" href="{{ url_for('postar')}}">Adicionar Postagem</a>
+    </div>
+    {% for postagem in postagens %}
+    <div class="card w-50 my-3">
+        <div class="card-header">
+            <h5 class="card-title"><i class="bi bi-person-fill"></i> {{ postagem.usuario }}</h5>
+        </div>
+        <div class="card-body">{{ postagem.mensagem }}</div>
+        <div class="card-footer"><i class="bi bi-clock-fill"></i> {{ postagem.data }}</div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APP COMPRAS</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static', filename= 'style.css') }}">
+</head>
+
+<body>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
+    <!--Navbar Boot-->
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand">E-Commerce</a>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    <a class="btn btn-primary" href="{{ url_for('lista_produto') }}" role="button">Nossos Produtos :) </a>
+    
+    
+    <img src="{{ url_for('static', filename='comprar.png') }}" width="60" height="60" />
+    
+    
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://www.ibid.com.br/blog/wp-content/uploads/2019/05/PortaldeCompras_377a9c48c9ed94d09c23a0d41ec32de6_2000.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="https://img.freepik.com/fotos-gratis/caixas-de-pacote-do-produto-e-sacola-de-compras-no-carrinho-com-laptop-para-compras-on-line-e-conceito-de-entrega_38716-138.jpg?w=2000" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="https://img.olhardigital.com.br/wp-content/uploads/2021/03/shutterstock_1578853621-695x500.jpg" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<h1>Cadastro de Produto</h1>
+      <form action="{{ url_for('salvar')}}" method="POST">
+          <label for="input-nome">Nome</label>
+          <input type="text" id="input-nome" name="nome" />
+          <label for="input-quantidade">Quantidade</label>
+          <input type="number" id="input-quantidade" name="quantidade" />
+          <label for="input-valor">Valor</label>
+          <input type="number" id="input-valor" name="valor" />
+          <label for="input-imagem">Imagem</label>
+          </label>
+          <input type="submit" />
+      </form>
+</body>
+
+</html>
